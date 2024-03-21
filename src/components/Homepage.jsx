@@ -26,16 +26,23 @@ const Homepage = () => {
                 duration: 0.75,
                 display: "flex",
                 ease: "expoScale(0.5,7,none)",
-                zIndex : 0
+                zIndex: 0
             }
-        )
+        );
 
-        gsap.fromTo(".next_btn", { opacity: 1 }, { opacity: 0 , duration : 0.75 , zIndex : -10 });
+        gsap.fromTo(
+            ".next_btn",
+            { opacity: 1 },
+            { opacity: 0, duration: 0.75, zIndex: -10 }
+        );
 
-        gsap.fromTo(".back_btn", { opacity: 0 }, { opacity: 1 , zIndex: 10 , duration: 0 });
+        gsap.fromTo(
+            ".back_btn",
+            { opacity: 0 },
+            { opacity: 1, zIndex: 10, duration: 0 }
+        );
 
-        gsap.to(".settings_btn", { display: "block", zIndex : 10 });
-
+        gsap.to(".settings_btn", { display: "block", zIndex: 10 });
     };
 
     const handleBack = () => {
@@ -53,47 +60,51 @@ const Homepage = () => {
                 duration: 0.75,
                 display: "flex",
                 ease: "expoScale(0.5,7,none)",
-                zIndex : -30
+                zIndex: -30
             }
         );
 
         gsap.fromTo(
             ".next_btn",
             { opacity: 0 },
-            { opacity: 1, ease: "expoScale(0.5,7,none)" , zIndex : 0 }
+            { opacity: 1, ease: "expoScale(0.5,7,none)", zIndex: 0 }
         );
 
         gsap.fromTo(
             ".back_btn",
             { opacity: 1 },
-            { opacity: 0, duration: 0, zIndex : -20 , ease: "expoScale(0.5,7,none)" }
+            {
+                opacity: 0,
+                duration: 0,
+                zIndex: -20,
+                ease: "expoScale(0.5,7,none)"
+            }
         );
 
         gsap.to(".settings_back_btn", { display: "none", duration: 0 });
 
-        gsap.to(".settings_btn", { display: "none", duration: 0 , zIndex : 10 });
+        gsap.to(".settings_btn", { display: "none", duration: 0, zIndex: 10 });
 
         gsap.to(".profile_details", { xPercent: 0, scale: 1 });
 
-        gsap.to(".user_details",{ opacity : 0 , zIndex : -50 });
+        gsap.to(".user_details", { opacity: 0, zIndex: -50 });
     };
 
     const handleSettings = () => {
         gsap.to(".profile_details", {
             xPercent: -80,
-            scale: 0.75,
+            scale: 0.75
         });
 
-        gsap.to(".settings_back_btn", { display: "block", zIndex : 10 , duration : 0  });
+        gsap.to(".settings_back_btn", {
+            display: "block",
+            zIndex: 10,
+            duration: 0
+        });
 
-        gsap.to(".settings_btn", { display: "none", zIndex : -10 , duration : 0 });
+        gsap.to(".settings_btn", { display: "none", zIndex: -10, duration: 0 });
 
-        gsap.fromTo(
-            ".user_details",
-            { opacity : 0 },
-            { opacity : 1 , zIndex : 0}
-        );
-
+        gsap.fromTo(".user_details", { opacity: 0 }, { opacity: 1, zIndex: 0 });
     };
 
     const handleSettingsBack = () => {
@@ -103,14 +114,18 @@ const Homepage = () => {
             { xPercent: 0, scale: 1 }
         );
 
-        gsap.to(".settings_back_btn", { display: "none", zIndex : -10, duration : 0 });
+        gsap.to(".settings_back_btn", {
+            display: "none",
+            zIndex: -10,
+            duration: 0
+        });
 
-        gsap.to(".settings_btn", { display: "block", zIndex : 10 , duration : 0  });
+        gsap.to(".settings_btn", { display: "block", zIndex: 10, duration: 0 });
 
         gsap.fromTo(
             ".user_details",
-            { opacity : 1 },
-            { opacity : 0 , zIndex : -50 }
+            { opacity: 1 },
+            { opacity: 0, zIndex: -50 }
         );
     };
 
@@ -215,32 +230,90 @@ const Homepage = () => {
             <span className="h-2/5 w-0 border absolute right-1/3 hidden" />
 
             <div className="user_details h-3/4 w-1/3 absolute right-0 flex flex-col justify-center items-center opacity-0 -z-30">
-                <label htmlFor="basicInfo" className="self-start ml-16 text-[12px] text-gray-500">BASIC INFO</label>
-                <div id="basicInfo" className="border-b-2 w-96 h-10 flex justify-end">
-                    <button className="h-7/8 mb-2 mr-2 w-1/6 border border-[#FED964] rounded-md text-[10px] font-bold text-gray-500">CANCEL</button>
-                    <button className="h-7/8 mb-2 mr-2 w-1/6 border border-[#FED964] bg-[#FED964] rounded-md text-[10px] text-black font-bold">SAVE</button>
+                <label
+                    htmlFor="basicInfo"
+                    className="self-start ml-16 text-[12px] text-gray-500"
+                >
+                    BASIC INFO
+                </label>
+                <div
+                    id="basicInfo"
+                    className="border-b-2 w-96 h-10 flex justify-end"
+                >
+                    <button className="h-7/8 mb-2 mr-2 w-1/6 border border-[#FED964] rounded-md text-[10px] font-bold text-gray-500">
+                        CANCEL
+                    </button>
+                    <button className="h-7/8 mb-2 mr-2 w-1/6 border border-[#FED964] bg-[#FED964] rounded-md text-[10px] text-black font-bold">
+                        SAVE
+                    </button>
                 </div>
                 <div className="w-96 h-12 flex justify-around mt-4">
                     <div className="w-52 h-6 mr-4">
-                        <label htmlFor="firstname" className="text-[12px] text-gray-500">FIRSTNAME</label>
-                        <input id="firstname" type="text" className="w-full h-full border-2 rounded-md"/>
+                        <label
+                            htmlFor="firstname"
+                            className="text-[12px] text-gray-500"
+                        >
+                            FIRSTNAME
+                        </label>
+                        <input
+                            id="firstname"
+                            type="text"
+                            className="w-full h-full border-2 rounded-md"
+                        />
                     </div>
                     <div className="w-2/5 h-6 ml-4">
-                        <label htmlFor="lastname" className="text-[12px] text-gray-500">LASTNAME</label>
-                        <input id="lastname" type="text" className="w-36 h-full border-2 rounded-md"/>
+                        <label
+                            htmlFor="lastname"
+                            className="text-[12px] text-gray-500"
+                        >
+                            LASTNAME
+                        </label>
+                        <input
+                            id="lastname"
+                            type="text"
+                            className="w-36 h-full border-2 rounded-md"
+                        />
                     </div>
                 </div>
                 <div className="flex w-96 h-10 flex-col mt-4">
-                    <label className="text-[12px] text-gray-500" htmlFor="usename">USERNAME</label>
-                    <input id="username" type="text" className="border-2 w-96 rounded-md"/>
+                    <label
+                        className="text-[12px] text-gray-500"
+                        htmlFor="usename"
+                    >
+                        USERNAME
+                    </label>
+                    <input
+                        id="username"
+                        type="text"
+                        className="border-2 w-96 rounded-md"
+                    />
                 </div>
                 <div className="flex w-96 h-10 flex-col mt-4">
-                    <label className="text-[12px] text-gray-500" htmlFor="email">EMAIL</label>
-                    <input id="email" type="text" className="border-2 w-96 rounded-md"/>
+                    <label
+                        className="text-[12px] text-gray-500"
+                        htmlFor="email"
+                    >
+                        EMAIL
+                    </label>
+                    <input
+                        id="email"
+                        type="text"
+                        className="border-2 w-96 rounded-md"
+                    />
                 </div>
                 <div className="flex flex-col w-96 h-14 mt-4">
-                    <label className="text-[12px] text-gray-500" htmlFor="aboutme">ABOUT ME</label>
-                    <input className="border-b-2 h-12" type="text" name="" id="aboutme" />
+                    <label
+                        className="text-[12px] text-gray-500"
+                        htmlFor="aboutme"
+                    >
+                        ABOUT ME
+                    </label>
+                    <input
+                        className="border-b-2 h-12"
+                        type="text"
+                        name=""
+                        id="aboutme"
+                    />
                 </div>
             </div>
             <footer className="fixed bottom-0 scale-75">
